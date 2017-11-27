@@ -7,7 +7,7 @@ const PlayerInfo = (props) => (
   <div>
     <ul className="list">
       <li>
-        <IndexLink to={"/league" + props.params.leagueId + '/team' + props.params.teamId}>BACK</IndexLink>
+        <IndexLink to={"/league/" + props.params.leagueId + '/team/' + props.params.teamId}>BACK</IndexLink>
       </li>
       <li>Name: <strong>{props.name}</strong></li>
       <li>Position: {props.position}</li>

@@ -33,7 +33,7 @@ class Leagues extends React.Component {
             </li>
             {this.state.leagues.map((el) => {
                 return <li key={el.id}>
-                    <Link activeStyle={activeStyle} to={'/league' + el.id }>{el.id} {el.caption} {el.league} </Link>
+                    <Link activeStyle={activeStyle} to={'/league/' + el.id }>{el.id} {el.caption} {el.league} </Link>
                   </li>
             })}
           </ul>

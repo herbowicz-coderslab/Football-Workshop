@@ -27,10 +27,11 @@ class Players extends React.Component {
     console.log('players cwrp', newProps.params.teamId);
     this.fetchPlayers(newProps.params.teamId);
   }
-  
+
   fetchPlayers(id) {
     cacheProxy.get(`http://api.football-data.org/v1/teams/${id}/players`)
-      .then(resp => resp.json()).then(resp => {
+      .then(resp => resp.json())
+      .then(resp => {
         this.setState({data: resp.players})
       });
   }
@@ -71,12 +72,12 @@ class Players extends React.Component {
         }}>
           <ul className="list">
             <li>
-              <IndexLink to={"/league" + this.props.params.leagueId}>BACK</IndexLink>
+              <IndexLink to={"/league/" + this.props.params.leagueId}>BACK</IndexLink>
             </li>
 
             {this.state.data.map((el, i) => {
               return <li key={i}>
-                <Link id={i} onClick={this.handleClick} activeStyle={activeStyle} to={`/league${this.props.params.leagueId}/team${this.props.params.teamId}/player${i + 1}`}>
+                <Link id={i} onClick={this.handleClick} activeStyle={activeStyle} to={`/league/${this.props.params.leagueId}/team/${this.props.params.teamId}/player/${i + 1}`}>
                   {i + 1} {el.name}
                 </Link>
               </li>

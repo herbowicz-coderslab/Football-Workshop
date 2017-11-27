@@ -26,9 +26,9 @@ class App extends React.Component {
     return (
       <Router history={hashHistory}>
         <Route path='/' component={Leagues}>
-          <Route path='/league:leagueId' component={Teams}>
-            <Route path='/league:leagueId/team:teamId' component={Players}>
-              <Route path='/league:leagueId/team:teamId/player:playerId' component={PlayerInfo}  />
+          <Route path='/league/:leagueId' component={Teams}>
+            <Route path='/league/:leagueId/team/:teamId' component={Players}>
+              <Route path='/league/:leagueId/team/:teamId/player/:playerId' component={PlayerInfo}  />
             </Route>
           </Route>
         </Route>

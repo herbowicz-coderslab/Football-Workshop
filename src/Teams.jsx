@@ -23,9 +23,10 @@ class Teams extends React.Component {
 
   fetchTeams(id) {
     cacheProxy.get(`http://api.football-data.org/v1/competitions/${id}/teams`)
-        .then(resp => resp.json())
-        .then(resp => {this.setState({teams: resp.teams});
-    })
+      .then(resp => resp.json())
+      .then(resp => {
+        this.setState({teams: resp.teams});
+      })
   }
 
   getPlayersLink(str) {
@@ -52,7 +53,7 @@ class Teams extends React.Component {
 
             {this.state.teams.map((el) => {
                 return <li key={el.name}>
-                    <Link activeStyle={activeStyle} to={'/league' + this.props.params.leagueId + '/team' + this.getPlayersLink(el._links.players.href) }> {this.getPlayersLink(el._links.players.href)} {el.name} </Link>
+                    <Link activeStyle={activeStyle} to={'/league/' + this.props.params.leagueId + '/team/' + this.getPlayersLink(el._links.players.href) }> {this.getPlayersLink(el._links.players.href)} {el.name} </Link>
                   </li>
             })}
 
