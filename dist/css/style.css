@@ -9,7 +9,7 @@
   list-style-type: none;
   color: darkslategrey;
   background-color: #cde;
-  margin: 20px;
+  margin: 20;
 }
 .list li:nth-child(2n+1) {
   background-color: #fef;
